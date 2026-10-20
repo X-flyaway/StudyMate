@@ -1,111 +1,165 @@
-# StudyMate — AI 学习规划智能体
+# 📚 StudyMate — AI 学习规划智能体
 
-StudyMate 是一个基于 Java 开发的 AI 学习规划应用，旨在帮助用户根据学习目标生成个性化学习计划，并通过图形化界面管理每日学习任务、记录完成状态和查看学习进度。
+**让学习计划更清晰，让每一步进步都看得见。**
 
-项目使用 Java Swing 构建桌面界面，结合 DeepSeek API 实现 AI 学习计划生成与调整，并使用 Maven 管理项目依赖。
+StudyMate 是一个基于 Java Swing 与 DeepSeek API 开发的 AI 学习规划桌面应用。用户可以输入学习目标、学习周期和每日可用时间，由 AI 辅助生成个性化学习计划，并通过任务管理与进度追踪持续推进学习。
 
-## ✨ 项目功能
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/UI-Java%20Swing-blue?style=for-the-badge" alt="Java Swing" />
+  <img src="https://img.shields.io/badge/Build-Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
+  <img src="https://img.shields.io/badge/AI-DeepSeek-5B6CFF?style=for-the-badge" alt="DeepSeek" />
+</p>
 
-- **AI 学习计划生成**：根据学习目标、计划天数和每日学习时长生成学习任务。
-- **任务管理**：查看学习任务，并根据任务 ID 标记完成状态。
-- **进度查看**：查看学习计划的完成情况。
-- **AI 重新规划**：根据当前计划调整尚未完成的学习任务。
-- **图形化界面**：通过 Java Swing 界面进行交互。
-- **学习数据持久化**：保存学习计划与任务状态，便于后续继续使用。
+---
+
+## ✨ 项目亮点
+
+| 功能 | 说明 |
+|:--|:--|
+| 🤖 **AI 学习规划** | 根据学习目标、天数和每日学习时长生成学习计划 |
+| 📝 **任务管理** | 查看学习任务，并根据任务 ID 更新完成状态 |
+| 📊 **进度可视化** | 使用进度条和任务状态展示学习进展 |
+| 🔄 **AI 计划调整** | 根据学习情况辅助重新规划任务 |
+| 🎨 **桌面交互界面** | 使用 Java Swing 构建桌面界面，支持任务卡片与状态颜色 |
+| 💾 **学习数据保存** | 保存学习计划，方便后续继续使用 |
+
+## 🖥️ 界面展示
+
+StudyMate 采用桌面应用形式，将 AI 规划、任务列表和进度反馈整合在同一界面中。
+
+> 📸 **项目截图即将补充**
+>
+> <img width="1580" height="1131" alt="image" src="https://github.com/user-attachments/assets/591b1b3b-7a6f-4cd0-afd8-5bc7f78cdbbe" />
+
 
 ## 🛠️ 技术栈
 
-| 技术 | 用途 |
-|---|---|
-| Java | 核心业务逻辑 |
-| Java Swing | 桌面图形用户界面 |
-| Maven | 项目构建与依赖管理 |
-| DeepSeek API | AI 学习计划生成与调整 |
-| Java HttpClient | HTTP API 请求 |
-| Jackson | JSON 数据处理 |
+- **开发语言：** Java
+- **图形界面：** Java Swing
+- **项目构建：** Apache Maven
+- **AI 服务：** DeepSeek API
+- **网络请求：** Java HttpClient
+- **JSON 处理：** Jackson Databind
+- **开发环境：** IntelliJ IDEA
 
-## 📁 项目结构
+## 📂 项目结构
 
 ```text
 StudyMate/
 ├── pom.xml
 ├── README.md
+├── .gitignore
 └── src/
     └── main/
         └── java/
             └── main/
-                └── java/
-                    ├── Main.java
-                    ├── StudyMateGUI.java
-                    ├── StudyAgent.java
-                    ├── AIPlanner.java
-                    ├── StudyPlan.java
-                    ├── StudyTask.java
-                    ├── StudyTools.java
-                    └── FileStorage.java
+                ├── Main.java
+                ├── StudyMateGUI.java
+                ├── StudyAgent.java
+                ├── AIPlanner.java
+                ├── StudyPlan.java
+                ├── StudyTask.java
+                ├── StudyTools.java
+                └── FileStorage.java
 ```
 
-## ⚙️ 环境要求
+| 文件 | 主要职责 |
+|:--|:--|
+| `Main.java` | 程序启动入口 |
+| `StudyMateGUI.java` | Swing 图形界面与用户交互 |
+| `StudyAgent.java` | 学习规划智能体的协调逻辑 |
+| `AIPlanner.java` | AI 学习计划生成与调整 |
+| `StudyPlan.java` | 学习计划的数据模型 |
+| `StudyTask.java` | 学习任务的数据模型 |
+| `StudyTools.java` | 学习任务相关操作 |
+| `FileStorage.java` | 学习数据的保存与读取 |
 
-- JDK 17 或兼容的更高版本
-- Maven（或 IntelliJ IDEA 内置 Maven）
-- 可访问 DeepSeek API 的网络环境
-- 有效的 DeepSeek API Key
+## 🚀 快速开始
 
-## 🚀 运行方法
+### 1. 环境准备
 
-### 1. 克隆项目
+运行项目之前，请准备：
+
+- JDK 17 或更高版本
+- IntelliJ IDEA
+- Maven
+- 可访问的 DeepSeek API 服务及有效 API Key
+
+> 请以 `pom.xml` 中的 Java 编译配置为准。
+
+### 2. 克隆项目
 
 ```bash
 git clone https://github.com/X-flyaway/StudyMate.git
 cd StudyMate
 ```
 
-### 2. 配置 API Key
+### 3. 配置 API Key
 
-先在 DeepSeek 官方平台获取 API Key，然后将它配置为环境变量 `DEEPSEEK_API_KEY`。
+项目需要通过环境变量 `DEEPSEEK_API_KEY` 读取 API 密钥。
 
-Windows PowerShell 示例：
+在 IntelliJ IDEA 中：
 
-```powershell
-$env:DEEPSEEK_API_KEY="你的_API_Key"
-```
-
-该命令仅对当前 PowerShell 会话生效。也可以在 IntelliJ IDEA 的 Run/Debug Configurations 中，为运行配置添加环境变量：
+1. 打开 **Run → Edit Configurations**。
+2. 选择运行 `Main.java` 的配置。
+3. 找到 **Environment variables**。
+4. 添加以下变量：
 
 ```text
-DEEPSEEK_API_KEY=你的_API_Key
+DEEPSEEK_API_KEY=你的真实API密钥
 ```
 
-**安全提醒：请勿将真实 API Key 写入源代码、README 或上传到 GitHub。**
+5. 保存配置。
 
-### 3. 使用 IntelliJ IDEA 运行
+⚠️ **安全提醒：** 请勿将真实 API Key 写入 Java 源码、README 或提交到 GitHub。API Key 应只保存在本地运行配置或安全的环境变量中。
 
-1. 使用 IntelliJ IDEA 打开项目根目录。
-2. 等待 Maven 加载依赖。
-3. 确认 JDK 设置正确，并配置 `DEEPSEEK_API_KEY`。
-4. 根据 `Main.java` 中的启动逻辑运行程序。
+### 4. 运行程序
 
-## 📌 项目特点
+在 IntelliJ IDEA 中找到：
 
-- 将 AI 能力与学习任务管理结合。
-- 通过智能体组织计划生成、任务执行和计划调整流程。
-- 采用模块化设计，将界面、计划管理、AI 请求和数据存储分离。
+```text
+src/main/java/main/java/Main.java
+```
+
+打开文件，点击运行按钮即可启动应用。
+
+如果依赖尚未下载完成，可以先在 IDEA 的 Maven 面板中执行 `Reload All Maven Projects`。
+
+## 🎯 项目目标
+
+StudyMate 希望将生成式 AI 与日常学习管理结合起来，探索 AI 在个性化学习规划中的应用。
+
+通过本项目，实践了：
+
+- Java 面向对象程序设计
+- Swing 图形界面开发
+- Maven 项目依赖管理
+- HTTP API 调用与 JSON 数据处理
+- 智能体业务逻辑设计
+- 学习任务状态管理与进度可视化
+- Git 与 GitHub 版本控制
 
 ## 🔮 后续改进方向
 
-- 增加学习日历与任务筛选功能。
-- 支持历史学习计划查询。
-- 优化学习统计和可视化图表。
-- 增强 API 异常处理和离线状态提示。
-- 完善单元测试与自动化测试。
+- [ ] 增加学习数据统计与历史记录
+- [ ] 优化学习计划编辑与任务调整体验
+- [ ] 增加每日学习提醒
+- [ ] 改善异常处理与 API 请求反馈
+- [ ] 增加更丰富的学习进度图表
+- [ ] 持续优化界面布局与视觉效果
 
 ## 👩‍💻 项目信息
 
 - **项目名称：** StudyMate
-- **项目类型：** Java 课程设计 / AI 学习规划智能体
-- **代码仓库：** https://github.com/X-flyaway/StudyMate
+- **项目类型：** AI 学习规划桌面应用
+- **开发语言：** Java
+- **代码仓库：** [X-flyaway/StudyMate](https://github.com/X-flyaway/StudyMate)
 
 ---
 
-本项目用于学习 Java、桌面应用开发、API 调用和智能体应用设计。
+<p align="center">
+  <strong>StudyMate · Plan smarter. Learn better.</strong>
+  <br />
+  <sub>让每一个学习目标，都有清晰的前进方向。</sub>
+</p>
